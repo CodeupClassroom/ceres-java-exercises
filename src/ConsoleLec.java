@@ -23,6 +23,16 @@ public class ConsoleLec {
         System.out.format("\nHello %s, %s. Nice to see you.\n", cohort, company);
         System.out.println("Hello " + cohort + ", " + company + ". Nice to see you.");
 
+        //Parsing values or getting the value of
+        String piString = "3.1416";
+        double pi = Double.valueOf(piString);
+        double piParsed = Double.parseDouble(piString);
+        // Now that they are doubles we can do math with them
+        pi = pi *2;
+        piParsed = piParsed *3;
+
+        System.out.println("piParsed = " + pi);
+        System.out.println("piParsed = " + piParsed);
 
     }
 
