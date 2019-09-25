@@ -9,10 +9,20 @@ public class Input {
         this.scanner = new Scanner(System.in);
     }
 
-    public String getString(){
-        System.out.println("Type something: ");
+    private String getString(){
         return this.scanner.nextLine();
     }
+
+    public String getString(String prompt){
+        if(prompt.isEmpty()){
+            System.out.println("Type something: ");
+        } else {
+            System.out.println(prompt);
+        }
+        return getString();
+    }
+
+
 
     public boolean yesNo(){
         System.out.println("Type y/n or yes/no");
@@ -21,8 +31,7 @@ public class Input {
     }
 
     public int getInt(int min, int max){
-        System.out.println("Give me a number: ");
-        int number = Integer.parseInt(this.scanner.nextLine());
+        int number = getInt();
         if(number >= min && number <= max){
             return number;
         } else {
@@ -37,8 +46,7 @@ public class Input {
     }
 
     public double getDouble(double min, double max){
-        System.out.println("Give me a decimal: ");
-        double number = Double.parseDouble(this.scanner.nextLine());
+        double number = getDouble();
         if(number >= min && number <= max){
             return number;
         } else {
