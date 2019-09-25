@@ -46,7 +46,7 @@ public class Input {
     }
 
     public double getDouble(double min, double max){
-        double number = getDouble();
+        double number = getDouble("Give me a decimal");
         if(number >= min && number <= max){
             return number;
         } else {
@@ -55,8 +55,8 @@ public class Input {
         }
     }
 
-    public double getDouble(){
-        System.out.println("Give me a decimal: ");
+    public double getDouble(String prompt){
+        System.out.println(prompt);
         return Double.parseDouble(this.scanner.nextLine());
     }
 
