@@ -22,7 +22,7 @@ public class Person {
 
     private void handlePerson(){
         worldPopulation += 1;
-        System.out.println("A new person instance has been created");
+//        System.out.println("A new person instance has been created");
     }
 
 }
