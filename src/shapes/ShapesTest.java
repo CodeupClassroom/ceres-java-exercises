@@ -14,6 +14,5 @@ public class ShapesTest {
 
         System.out.println("box2.getPerimeter() = " + (int) box2.getPerimeter());
         System.out.println("box2.getArea() = " + (int) box2.getArea());
-
     }
 }
