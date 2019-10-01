@@ -11,7 +11,10 @@ public class ExceptionsLEc {
         String indentationPreference = sc.nextLine();
 
         if (indentationPreference.equals("tabs")) {
-            throw new Exception("Spaces are superior!");
+            WrongIndentationTypeException customException;
+            customException = new WrongIndentationTypeException("Wrong!");
+            throw customException;
+//            throw new Exception("Spaces are superior!");
         }
 
         if(indentationPreference.equals("-1")){
