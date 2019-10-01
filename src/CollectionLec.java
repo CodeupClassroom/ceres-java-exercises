@@ -4,6 +4,7 @@ import my_store.Phone;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class CollectionLec {
 
@@ -97,6 +98,7 @@ public class CollectionLec {
 //tt7286456
         HashMap<String, Movie> fmdb = new HashMap<>();
 
+
         fmdb.put("tt7286456", new Movie("Joker", "Crime, Drama, Thriller"));
         fmdb.put("tt7286457", new Movie("Joker II", "Crime, Drama"));
 
@@ -106,6 +108,19 @@ public class CollectionLec {
             System.out.println("getCategory = " + fmdb.get(id).getCategory());
         }
 
+        oldLanguages();
+        languages();
 
     }
+
+    @SuppressWarnings("all")
+    public static List<String> languages() {
+        return new ArrayList();
+    }
+
+    @Deprecated
+    public static List<String> oldLanguages() {
+        return new ArrayList();
+    }
+
 }
