@@ -41,8 +41,14 @@ public class Input {
     }
 
     public int getInt(){
-        System.out.println("Give me a number: ");
-        return Integer.parseInt(this.scanner.nextLine());
+        try{
+            return Integer.valueOf(getString("Give me a number: "));
+        }catch(NumberFormatException e){
+            System.out.println("That is not a number");
+            // sends an email to the admin with the problem and it's details
+            //e.printStackTrace();
+            return getInt();
+        }
     }
 
     public double getDouble(double min, double max){
@@ -56,8 +62,12 @@ public class Input {
     }
 
     public double getDouble(String prompt){
-        System.out.println(prompt);
-        return Double.parseDouble(this.scanner.nextLine());
+        try {
+            return Double.parseDouble(getString(prompt));
+        }catch(NumberFormatException e){
+            System.out.println("That is not a decimal");
+            return getDouble(prompt);
+        }
     }
 
 }
