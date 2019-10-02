@@ -136,31 +136,31 @@ public class FileIoLecture {
 //        }
 
         // Replace "milk" with "cream"
+       updateGroceryItem("milk", "cream", Paths.get("data", "groceries.txt"));
 
-//        List<String> lines = null;
-//        try {
-//            lines = Files.readAllLines(Paths.get("data", "groceries.txt"));
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//        List<String> newList = new ArrayList<>();
-//        for (String line : lines) {
-//            if (line.equals("bread")) {
-//                newList.add("starch");
-//                continue;
-//            }
-//            newList.add(line);
-//        }
-//
-//        System.out.println(newList);
-//
-//        try {
-//            Files.write(Paths.get("data", "groceries.txt"), newList);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+    }
 
+    // exercise example
+    public static List<String> getContents(String location) throws IOException {
+        Path p = Paths.get(location);
+        return Files.readAllLines(p);
+    }
+
+    public static void updateGroceryItem(String oldItem, String newItem, Path path) {
+        try {
+            List<String> fileContents = getContents(path.toString());
+            List<String> newList = new ArrayList<>();
+            for (String line : fileContents) {
+                if (line.equals(oldItem)) {
+                    newList.add(newItem); // remove this line causes the method to delete an item
+                    continue;
+                }
+                newList.add(line);
+            }
+            Files.write(path, newList);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
 
