@@ -13,13 +13,14 @@ public class FileIoLecture {
 
         // ============================ PATH
 
-//        Path fileLecturePath = Paths.get("src", "FileIoLecture.java");
+//        Path fileLecturePath = Paths.get( "src","Test.java");
 //        System.out.println(fileLecturePath);
 //        System.out.println(fileLecturePath.toAbsolutePath());
 
 //        Path otherPath = Paths.get("src", "../", "src", "../", "src", "FileIoLecture");
 //        System.out.println(otherPath);
 //        System.out.println(otherPath.normalize());
+
 //        System.out.println(otherPath.toAbsolutePath());
 //        System.out.println(otherPath.normalize().toAbsolutePath());
 
@@ -30,34 +31,24 @@ public class FileIoLecture {
 //
 //        String directory = "data";
 //        String filename = "info.txt";
-//        Path dataDirectory = Paths.get(directory);
-//        Path dataFile = Paths.get(directory, filename);
+//        Path dirPath = Paths.get(directory, "sub-data", "sub-sub-data");
+//        Path pathToFile = Paths.get(directory, filename);
+//        System.out.println(pathToFile);
 //
-//        System.out.println(dataDirectory);
-//        System.out.println(dataFile);
-//
-//        if (!Files.exists(dataDirectory)) {
+//        if (Files.notExists(dirPath)) {
 //
 //            try {
-//                Files.createDirectories(dataDirectory);
+//                Files.createDirectories(dirPath);
 //            } catch (IOException e) {
 //                e.printStackTrace();
 //            }
-////
-//        }
-
-//        if (!Files.exists(dataFile)) {
-//            try {
-//                Files.createFile(dataFile);
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
+//
 //        }
 
 
         // ============================ READING FILES
 
-//        Path p = Paths.get("src/lec/test.txt");
+//        Path p = Paths.get("data", "test.txt");
 //
 //        List<String> lines = new ArrayList<>();
 //
@@ -66,18 +57,16 @@ public class FileIoLecture {
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
-//
+
 //        System.out.println(lines);
-//
+
 //        for (String name : lines) {
 //            System.out.println("Hello, " + name + "!");
 //        }
 
 
-
-
-
 //        try {
+//
 //            List<String> contents = Files.readAllLines(
 //                Paths.get("data", "bob.txt")
 //            );
@@ -89,20 +78,13 @@ public class FileIoLecture {
 //            e.printStackTrace();
 //        }
 
-//        try {
-//            List<String> contents = Files.readAllLines(Paths.get("data/info.txt"));
-//            System.out.println(contents.toString());
-//        } catch (IOException e) {
-//            System.out.println("Exception!");
-//            e.printStackTrace();
-//        }
 
 
         // ============================ WRITING FILES
 
-//        Path p = Paths.get("src/lec/test.txt");
+//        Path p = Paths.get("data",  "names.txt");
 //
-//        List<String> newNames = Arrays.asList("John", "Fred", "asdf");
+//        List<String> newNames = Arrays.asList("Justin", "Sophie", "Fer");
 //        try {
 //            Files.write(p, newNames);
 //        } catch (IOException e) {
@@ -110,7 +92,7 @@ public class FileIoLecture {
 //        }
 
 
-//            Path p = Paths.get("./src/lec",  "test.txt");
+//            Path p = Paths.get("data",  "names.txt");
 //
 //            List<String> names = new ArrayList<>();
 //            names.add("Tim");
@@ -121,23 +103,7 @@ public class FileIoLecture {
 //            } catch(IOException e) {
 //                e.printStackTrace();
 //            }
-//
-//            String directory = "data";
-//            String filename = "info.txt";
-//            Path dataDirectory = Paths.get(directory);
-//            Path dataFile = Paths.get(directory, filename);
-//
-//            List<String> nums = new ArrayList<>();
-//            nums.add("1");
-//            nums.add("2");
-//            nums.add("3");
-//
-//            try {
-//                Files.write(dataFile, nums, StandardOpenOption.APPEND);
-//            } catch(IOException e) {
-//                System.out.println("Exception!!!");
-//                e.printStackTrace();
-//            }
+
 
         // ============================ ADDITIONAL SLIDE EXAMPLES
 
@@ -145,16 +111,16 @@ public class FileIoLecture {
         // Print out each line in an existing file, along with the line number
 
 //        Path groceriesPath = Paths.get("data", "groceries.txt");
-//        List<String> groceryList = null;
 //        try {
-//            groceryList = Files.readAllLines(groceriesPath);
+//            List<String> groceryList = Files.readAllLines(groceriesPath);
+//            for (int i = 0; i < groceryList.size(); i += 1) {
+//                System.out.println((i + 1) + ": " + groceryList.get(i));
+//            }
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
-//
-//        for (int i = 0; i < groceryList.size(); i += 1) {
-//            System.out.println((i + 1) + ": " + groceryList.get(i));
-//        }
+
+
 
 
         // Add a line to an existing file
@@ -162,7 +128,8 @@ public class FileIoLecture {
 //        try {
 //            Files.write(
 //                    Paths.get("data", "groceries.txt"),
-//                    Arrays.asList("eggs", "bread", "milk") // list with one item
+//                    Arrays.asList("bread"), // list with one item
+//                    StandardOpenOption.APPEND
 //            );
 //        } catch (IOException e) {
 //            e.printStackTrace();
@@ -176,9 +143,7 @@ public class FileIoLecture {
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
-
-
-
+//
 //        List<String> newList = new ArrayList<>();
 //        for (String line : lines) {
 //            if (line.equals("bread")) {
