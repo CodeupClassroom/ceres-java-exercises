@@ -1,5 +1,7 @@
 package shapes;
 
 abstract class Shape {
-    private String color;
+    protected String color;
+    // Forces sub-classes to implement a color if they want to be a Shape
+    public abstract void setColor(String color);
 }

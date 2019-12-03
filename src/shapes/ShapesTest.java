@@ -28,6 +28,10 @@ public class ShapesTest {
         System.out.println("myShape.getPerimeter() = " + myShape.getPerimeter());
         System.out.println("myShape.getArea() = " + myShape.getArea());
 
+        Shape ring = new Circle(3);
+        ring.setColor("blue");
+        System.out.println("dot.color = " + ring.color);
+
 
     }
 }

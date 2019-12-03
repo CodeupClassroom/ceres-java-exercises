@@ -27,4 +27,9 @@ public class Square extends Quadrilateral {
     public double getArea() {
         return (super.width * super.width);
     }
+
+    @Override
+    public void setColor(String color) {
+        super.color = color;
+    }
 }

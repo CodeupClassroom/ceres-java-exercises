@@ -1,6 +1,6 @@
 package shapes;
 
-public class Circle {
+public class Circle extends Shape {
 
     private double radius;
 
@@ -17,5 +17,8 @@ public class Circle {
     }
 
 
-
+    @Override
+    public void setColor(String color) {
+        super.color = color;
+    }
 }

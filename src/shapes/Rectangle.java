@@ -25,4 +25,9 @@ public class Rectangle extends Quadrilateral implements Measurable{
     public double getArea() {
         return super.width * super.length;
     }
+
+    @Override
+    public void setColor(String color) {
+        super.color = color;
+    }
 }
